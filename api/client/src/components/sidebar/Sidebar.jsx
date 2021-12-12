@@ -2,61 +2,55 @@ import "./sidebar.css";
 import {
   RssFeed,
   Chat,
-  PlayCircleFilledOutlined,
   Group,
   Bookmark,
-  HelpOutline,
-  WorkOutline,
   Event,
-  School,
+  MarkunreadMailboxRounded,
+  AccountCircleRounded,
 } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 export default function Sidebar() {
+  const { user } = useContext(AuthContext);
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <ul className="sidebarList">
+          <Link to="/">
           <li className="sidebarListItem">
             <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <span className="sidebarListItemText">Posts</span>
           </li>
+            </Link>
+            <Link to={`/profile/${user.username}`}>
           <li className="sidebarListItem">
+            <AccountCircleRounded className="sidebarIcon" />
+            <span className="sidebarListItemText">Profile</span>
+          </li>
+          </Link>
+          <li className="sidebarListItem no">
             <Chat className="sidebarIcon" />
-            <span className="sidebarListItemText">Chats</span>
+            <span className="sidebarListItemText">Chat</span>
           </li>
-          <li className="sidebarListItem">
-            <PlayCircleFilledOutlined className="sidebarIcon" />
-            <span className="sidebarListItemText">Videos</span>
-          </li>
-          <li className="sidebarListItem">
+          <li className="sidebarListItem no">
             <Group className="sidebarIcon" />
-            <span className="sidebarListItemText">Groups</span>
+            <span className="sidebarListItemText">Friends</span>
           </li>
-          <li className="sidebarListItem">
+          <li className="sidebarListItem no">
             <Bookmark className="sidebarIcon" />
-            <span className="sidebarListItemText">Bookmarks</span>
+            <span className="sidebarListItemText">Saved</span>
           </li>
-          <li className="sidebarListItem">
-            <HelpOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Questions</span>
-          </li>
-          <li className="sidebarListItem">
-            <WorkOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Jobs</span>
-          </li>
-          <li className="sidebarListItem">
+          <li className="sidebarListItem no">
             <Event className="sidebarIcon" />
-            <span className="sidebarListItemText">Events</span>
-          </li>
-          <li className="sidebarListItem">
-            <School className="sidebarIcon" />
-            <span className="sidebarListItemText">Courses</span>
+            <span className="sidebarListItemText">Calendar</span>
           </li>
         </ul>
-        <button className="sidebarButton">Show More</button>
-        <hr className="sidebarHr" />
+        <button className="sidebarButton no">Show More</button>
+        <h4 className="rightbarTitle">Recent</h4>
         <ul className="sidebarFriendList">
           {Users.map((u) => (
             <CloseFriend key={u.id} user={u} />

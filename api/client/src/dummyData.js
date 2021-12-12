@@ -2,12 +2,12 @@ export const Users = [
   {
     id:1,
     profilePicture: "person/1.jpeg",
-    username: "Amy Pearson",
+    username: "Katie Pearson",
   },
   {
     id:2,
     profilePicture: "person/2.jpeg",
-    username: "Abigail Waterworth",
+    username: "Kendra Waterworth",
   },
   {
     id:3,
@@ -17,37 +17,37 @@ export const Users = [
   {
     id:4,
     profilePicture: "person/4.jpeg",
-    username: "Jamie Thompson",
+    username: "Ally Arriola",
   },
   {
     id:5,
     profilePicture: "person/5.jpeg",
-    username: "Gavin Haskin",
+    username: "Matt Haskin",
   },
   {
     id:6,
     profilePicture: "person/6.jpeg",
-    username: "Dan Norby",
+    username: "Korto Kpanu",
   },
   {
     id:7,
     profilePicture: "person/7.jpeg",
-    username: "Showyane Brown",
+    username: "Shanae Brown",
   },
   {
     id:8,
     profilePicture: "person/8.jpeg",
-    username: "Laurraine McKenzie",
+    username: "Jim McKenzie",
   },
   {
     id:9,
     profilePicture: "person/9.jpeg",
-    username: "Odin Meinholz",
+    username: "Ashley Meinholz",
   },
   {
     id:10,
     profilePicture: "person/10.jpeg",
-    username: "Maria Bamford",
+    username: "Marcus Bamford",
   },
 ];
 

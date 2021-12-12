@@ -4,6 +4,7 @@ import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
 
+
 export default function Login() {
   const email = useRef();
   const password = useRef();
@@ -17,13 +18,15 @@ export default function Login() {
     );
   };
 
+    
+
   return (
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">basic</h3>
+          <h3 className="loginLogo">basic.</h3>
           <span className="loginDesc">
-            Connect with friends with basic.
+            basic connects you to the people who matter most
           </span>
         </div>
         <div className="loginRight">
@@ -46,11 +49,10 @@ export default function Login() {
             <button className="loginButton" type="submit" disabled={isFetching}>
               {isFetching ? (
                 <CircularProgress color="white" size="20px" />
-              ) : (
-                "Log In"
-              )}
+                ) : (
+                  "Log In"
+                  )}
             </button>
-            <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
               {isFetching ? (
                 <CircularProgress color="white" size="20px" />
@@ -58,6 +60,8 @@ export default function Login() {
                 "Create a New Account"
               )}
             </button>
+            <span className="loginForgot">Forgot Password?</span>
+            
           </form>
         </div>
       </div>

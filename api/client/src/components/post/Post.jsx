@@ -1,5 +1,5 @@
 import "./post.css";
-import { MoreVert } from "@material-ui/icons";
+// import { MoreVert } from "@material-ui/icons";
 import { useContext, useEffect, useState } from "react";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
@@ -49,15 +49,14 @@ export default function Post({ post }) {
               />
             </Link>
             <span className="postUsername">{user.username}</span>
-            <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
-            <MoreVert />
+            <span className="postDate">{format(post.createdAt)}</span>
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText" style={{ padding: "10px" }}>{post?.desc}</span>
           <img className="postImg" src={PF + post.img} alt="" />
+          <span className="postText">{post?.desc}</span>
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
@@ -67,16 +66,10 @@ export default function Post({ post }) {
               onClick={likeHandler}
               alt=""
             />
-            <img
-              className="likeIcon"
-              src={`${PF}heart.png`}
-              onClick={likeHandler}
-              alt=""
-            />
-            <span className="postLikeCounter">{like} people like it</span>
+            <span className="postLikeCounter">{like} Likes</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">{post.comment} comments</span>
+            <span className="postCommentText">{post.comment}View Comments</span>
           </div>
         </div>
       </div>

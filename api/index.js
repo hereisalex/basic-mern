@@ -10,8 +10,15 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const router = express.Router();
 const path = require("path");
+const cors = require("cors");
 
-dotenv.config();
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+dotenv.config(); 
 
 mongoose.connect(
   process.env.MONGO_URL,
@@ -19,7 +26,7 @@ mongoose.connect(
   () => {
     console.log("Connected to MongoDB");
   }
-);
+);``
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //middleware
@@ -29,9 +36,11 @@ app.use(helmet({
 }));
 app.use(morgan("common"));
 
+
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/images");
+    cb(null, "/public/images");
   },
   filename: (req, file, cb) => {
     cb(null, req.body.name);
@@ -39,6 +48,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+
 app.post("/api/upload", upload.single("file"), (req, res) => {
   try {
     return res.status(200).json("File uploded successfully");

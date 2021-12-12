@@ -20,9 +20,13 @@ export default function Profile() {
     fetchUser();
   }, [username]);
 
+
+
+
   return (
     <>
       <Topbar />
+
       <div className="profile">
         <Sidebar />
         <div className="profileRight">

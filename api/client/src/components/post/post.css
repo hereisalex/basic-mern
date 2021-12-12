@@ -1,12 +1,13 @@
 .post {
   width: 70%;
   border-radius: 25px;
-  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  /* -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 10px 0px #ccc; */
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
   background-color: rgba(255, 255, 255, 0.863);
 }
 
@@ -14,8 +15,6 @@
 
 .postTop {
   display: flex;
-  padding-top: 10px;
-  padding-left: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -23,40 +22,53 @@
 .postTopLeft {
   display: flex;
   align-items: center;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.postTopRight {
+  margin-top: 20px;
 }
 
 .postProfileImg {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
+
 }
 
 .postUsername {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 400;
   margin: 0 10px;
 }
 
 .postDate{
-    font-size: 12px;
+    font-size: 16px;
+    color: rgb(92, 92, 92);
+    margin: 50px 20px 20px 0px;
+    
 }
 
 .postCenter{
-    margin: 20px 0;
+    padding: 15px 10px;
 }
 
 .postImg{
     width: 100%;
-    max-height: 500px;
+    max-height: 600px;
     object-fit: cover;
-    padding-top: 5px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+
 }
 
 .postBottom{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 15px 20px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -68,12 +80,16 @@
 }
 .postText {
   font-size: 20px;
-  padding-bottom: 5px;
+  font-weight: 300;
+  padding: 10px 30px 5px 30px;
+  display: inline-block;
 }
+
 .likeIcon{
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+    margin-right: 10px;
     cursor: pointer;
 }
 
@@ -82,7 +98,7 @@
 }
 
 .postCommentText{
-    cursor: pointer;
-    border-bottom: 1px dashed gray;
+    cursor: not-allowed;
     font-size: 15px;
+    color: rgb(89, 89, 89);
 }
